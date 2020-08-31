@@ -1,22 +1,28 @@
-
+require 'byebug'
 
 class InsertionSort
-    attr_reader :arr
+    attr_accessor :arr
     def initialize(arr)
       @arr = arr
     end
-
+    
     def sort
-      j = 2
-      while j < self.arr.length
-        key = self.arr[j]
-        i = j - 1
-          while i > 0 && self.arr[i] > key
-            self.arr[i] = self.arr[i + 1]
-            i = i - 1
+      key = 1
+      to_the_left = key - 1
+      while key < self.arr.length
+        if arr[key] < arr[to_the_left] 
+          mover_key = key
+          left_ele_moving_right = to_the_left
+          until arr[mover_key] > arr[left_ele_moving_right] || left_ele_moving_right < 0
+            arr[left_ele_moving_right], arr[mover_key] = 
+            arr[mover_key], arr[left_ele_moving_right]
+            mover_key -= 1 
+            left_ele_moving_right -= 1
           end
-      j += 1
+        end
+        key += 1
+        to_the_left += 1
       end
-        self.arr
+      self.arr
     end
 end
