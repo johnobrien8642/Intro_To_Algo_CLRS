@@ -1,3 +1,5 @@
+require_relative "sentinel"
+
 class MergeSort
   
   def initialize(arr)
@@ -6,8 +8,4 @@ class MergeSort
 end
 
 
-class Sentinel
-  def initialize
-    @name = "Sentinel"
-  end
-end
+
