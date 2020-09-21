@@ -16,8 +16,8 @@ class InsertionSort
           until arr[mover_key] > arr[left_ele_moving_right] || left_ele_moving_right < 0
             arr[left_ele_moving_right], arr[mover_key] = 
             arr[mover_key], arr[left_ele_moving_right]
-            mover_key -= 1 
-            left_ele_moving_right -= 1
+              mover_key -= 1 
+              left_ele_moving_right -= 1
           end
         end
         key += 1
